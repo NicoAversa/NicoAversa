@@ -1,7 +1,17 @@
 
+import logo from '../../images/gstlogo.png'
+import './NavBar.css'
+import {CartWidget} from '../CartWidget/CartWidget'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 export const NavBar = () =>{
+    const iconSearch=<FontAwesomeIcon icon={faSearch}/>
+    
     return (
         <nav>
+            <img className='logo' src={logo} height={50} width={100} />
+            <div className="Nav">
             <ul className='menu'>
                 <li><a>HOME<svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
     </a></li>
@@ -26,8 +36,11 @@ export const NavBar = () =>{
                 </a></li>
                 <li><a>Ayuda <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
                 </a></li>
-                🔍<input className='buscar' type='text' placeholder='Buscar Producto '/>
+                
             </ul>
+            </div>
+            <div className='search'> {iconSearch} <input className='buscar' type='text' placeholder='Buscar Producto '/> <CartWidget/> </div>
+            
         </nav>
     )
 }
