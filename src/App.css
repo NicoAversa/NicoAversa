@@ -2,9 +2,11 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+float: left;
+display: flex;
+padding-left: 15px;
+margin-left: 15px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

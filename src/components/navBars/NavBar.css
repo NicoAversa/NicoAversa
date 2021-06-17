@@ -1,0 +1,109 @@
+:root {
+    --body-bg-color: #1a1c1d;
+    --text-color: #aaaebc;
+    --red: #e74c3c;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    margin: 15px 0;
+    font: 15px sans-serif;
+    background:gray;
+    color: white;
+}
+.Barra{
+    display:block;
+    float:left;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    float: left;
+    
+}
+
+.menu li {
+    margin-right: 10px;
+}
+
+.menu a {
+    position: relative;
+    display: block;
+    padding: 10px;
+}
+
+.menu a svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu a svg path {
+    fill: transparent;
+    stroke-width: 10px;
+    stroke: currentColor;
+    stroke-dasharray: 547.4111328125;
+    stroke-dashoffset: 547.4111328125;
+    transition: stroke-dashoffset 0.5s cubic-bezier(0.29, 0.68, 0.74, 1.02);
+}
+
+.menu a:hover svg path {
+    stroke-dashoffset: 0;
+}
+
+.submenu {
+    position: absolute;
+    background: #ffffffb0;
+    visibility:hidden;
+    width: 5%;
+    margin: auto;
+}
+
+.submenu li a{
+    display: flex;
+    justify-content: center;
+    padding: 2;
+    margin:auto;
+    color: black;
+}
+
+.menu li:hover .submenu{
+    visibility:visible;
+}
+.search{
+    display:flex;
+
+    height: 20;
+    width: auto;
+    text-align:center;
+    margin-left:20px;
+}
+
+.buscar{
+    width: 100;
+    height: 20;
+    display: flex;
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.buscar:focus{
+    outline: none;
+    border: solid ;
+    border-color: #09d2ec;
+    border-radius: 10;
+    float:left;
+    display: flex;
+    margin-right: 5px;
+    margin-left: 10px;
+}
