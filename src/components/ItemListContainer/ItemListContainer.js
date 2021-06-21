@@ -1,10 +1,12 @@
-
+import {ItemCount} from '../ItemCount/ItemCount'
 export const ItemListContainer = () =>{
     
-    return (
+    return (     
         <items clasName='list'>
+             
             <hr/>
             <br/>
+               <ItemCount/>
             <br/>
             <h1 className='title'>Item List Container:</h1>
         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -1,0 +1,43 @@
+.count{
+    display: contents;
+    width:100px;
+    height:20px;
+    border: 1px solid;
+    margin-bottom:5px
+}
+.contador{
+    width:100px;
+    height:20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.btnCarrito{
+    background-color: white;
+    color:blue;
+    border: 1px solid blue;
+    width:auto;
+    height:20px;
+    margin-top:5px;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+
+}
+.container{
+width:120px;
+height:100px;
+border: 1px solid;
+display: contents;
+text-align:center;
+vertical-align:top;
+}
+
+.btnCarrito:hover{
+    background-color:blue;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
