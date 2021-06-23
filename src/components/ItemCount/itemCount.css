@@ -25,6 +25,7 @@
 
 }
 .container{
+margin-top: 15px;
 width:120px;
 height:100px;
 border: 1px solid;
@@ -40,4 +41,8 @@ vertical-align:top;
     border-radius: 5px 5px 5px 5px;
 -moz-border-radius: 5px 5px 5px 5px;
 -webkit-border-radius: 5px 5px 5px 5px;
+}
+.contador{
+    width: 300px;
+
 }
