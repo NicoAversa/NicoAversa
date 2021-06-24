@@ -1,21 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './ItemList.css'
-import React from 'react'
-export const ItemList = ()=>{
+import React, { useState, useEffect } from 'react'
 
-    const iconPlus=<FontAwesomeIcon icon={faPlusSquare}/>
-    const iconMinus=<FontAwesomeIcon icon={faMinusSquare}/>
-    const [Stock, setStock] = React.useState(5)
-    const [initial, setInitial] = React.useState(1)
-    const [onAdd, setOnAdd] = React.useState()
-
+export const ItemList = (props)=>{
+    const loader=<FontAwesomeIcon icon={faSpinner}/>
     return (
+    <div className='itemListContainer'>
+    {props.items.length === 0?(
+        <div className='cont'><div className='loading'>{loader}</div> </div>
+    ): (
+        props.map((item)=>{
+            return ( <itemList key={item.id} item={item.title}/>)
+        })
+    )}
+    </div>
+    )
+}
+/*    return (
         <itemlist>
     <div>
         
     </div>
         </itemlist>
-    )
-}
+    ) */

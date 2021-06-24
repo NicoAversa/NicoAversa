@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import {ItemCount} from '../ItemCount/ItemCount'
 import {Item} from '../Item/Item'
 import {ItemList} from '../ItemList/ItemList'
-
 export const ItemListContainer = (props) =>{
     
     const onAdd = (items) => {
@@ -10,17 +9,6 @@ export const ItemListContainer = (props) =>{
             alert('Ahora se deberian agregar ' + items + ' items al carrito!')
         }
     } 
-    return (
-        <>
-            {props.greetings}
-            <ItemCount initial={1} stock={7} onAdd={onAdd} />
-        </>
-    )
-}
-
-/* 
-
-
     
     const [items, setItems] = useState([])
     useEffect(()=>{
@@ -28,7 +16,7 @@ export const ItemListContainer = (props) =>{
             setTimeout(()=>{
                 resolve([
                     {
-                        pictureUrl: 
+                        imgUrl: 
                         "http://www.kuantumstore.com/web/image/product.product/10406/image_1024/%5BA5874%5D%20Teclado%20Gamer%20Mecanico%20Redragon%20k556%20RGB%20Devarajas?unique=b3346be",
                         title: 
                         "Teclado Gamer Mecánico ",
@@ -39,7 +27,7 @@ export const ItemListContainer = (props) =>{
                         "$3900",
                     },
                     {
-                        pictureUrl: 
+                        imgUrl: 
                         "https://http2.mlstatic.com/D_NQ_NP_672835-MLA30090470081_042019-O.webp",
                         title: 
                         "Mouse Gamer ",
@@ -50,7 +38,7 @@ export const ItemListContainer = (props) =>{
                         "$3500",
                     },
                     {
-                        pictureUrl: 
+                        imgUrl: 
                         "https://d34zlyc2cp9zm7.cloudfront.net/products/62b3b22c322b9b03a4bf90432096905871f7389d9c5b9b95bcf6060a60179c28.jpg_500",
                         title: 
                         'Monitor Curvo 24"',
@@ -61,18 +49,30 @@ export const ItemListContainer = (props) =>{
                         "$32800",
                     },
                 ])
-            },2000)
+            
+            },2000);
+            getItems.then((arr)=>{
+            setItems(arr)
+            console.log(arr)
+            })
+            getItems.catch((err)=>{
+            })
+
+            
         })
     })
-
     return (     
+        
         <items clasName='list'>
             <hr/>
+            <ItemList items={items}/>
             <br/>
             <ItemCount/>
             <br/>
-            <ItemList items={items}/>
+            
+            <ItemCount initial={1} stock={7} onAdd={onAdd} />
         </items>
+        
         )
-    } */
+    } 
     
