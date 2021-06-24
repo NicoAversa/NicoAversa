@@ -1,0 +1,13 @@
+.item-data{
+    width: 30%;
+    height: 300px;
+    border: 1px solid;
+}
+.image{
+    width: 100%;
+    height: 100px;
+}
+.product{
+    width: 100%;
+    height: 250px;
+}

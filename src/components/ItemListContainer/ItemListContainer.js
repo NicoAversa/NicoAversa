@@ -4,12 +4,6 @@ import {Item} from '../Item/Item'
 import {ItemList} from '../ItemList/ItemList'
 export const ItemListContainer = (props) =>{
     
-    const onAdd = (items) => {
-        if (props.stock !== 0) {
-            alert('Ahora se deberian agregar ' + items + ' items al carrito!')
-        }
-    } 
-    
     const [items, setItems] = useState([])
     useEffect(()=>{
         const getItems=new Promise((resolve, reject)=>{
@@ -50,16 +44,12 @@ export const ItemListContainer = (props) =>{
                     },
                 ])
             
-            },2000);
+            },2000)
+        })
             getItems.then((arr)=>{
             setItems(arr)
-            console.log(arr)
             })
-            getItems.catch((err)=>{
-            })
-
             
-        })
     })
     return (     
         
@@ -67,10 +57,8 @@ export const ItemListContainer = (props) =>{
             <hr/>
             <ItemList items={items}/>
             <br/>
-            <ItemCount/>
+            <Item/>
             <br/>
-            
-            <ItemCount initial={1} stock={7} onAdd={onAdd} />
         </items>
         
         )

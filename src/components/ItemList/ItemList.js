@@ -3,24 +3,21 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './ItemList.css'
 import React, { useState, useEffect } from 'react'
 
-export const ItemList = (props)=>{
+export const ItemList = ({items})=>{
     const loader=<FontAwesomeIcon icon={faSpinner}/>
     return (
     <div className='itemListContainer'>
-    {props.items.length === 0?(
-        <div className='cont'><div className='loading'>{loader}</div> </div>
-    ): (
-        props.map((item)=>{
-            return ( <itemList key={item.id} item={item.title}/>)
+    {items.length === 0 ? (
+        <div className='cont'>
+        <div className='loading'>{loader}</div>
+        </div> 
+    ) : (
+        items.map((item)=>{
+            return ( <item key={item.id} item={item.title}/>)
+            console.log(item)
         })
     )}
     </div>
     )
 }
-/*    return (
-        <itemlist>
-    <div>
-        
-    </div>
-        </itemlist>
-    ) */
+
