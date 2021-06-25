@@ -1,22 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './ItemList.css'
+import {Item} from '../Item/Item'
 import React, { useState, useEffect } from 'react'
 
-export const ItemList = ({items})=>{
+export const ItemList = ({itemsMostrar})=>{
     const loader=<FontAwesomeIcon icon={faSpinner}/>
+    const itemsJSX = itemsMostrar.map((item)=><Item item={item} key={item.id}/>)
+    
     return (
     <div className='itemListContainer'>
-    {items.length === 0 ? (
+    {itemsJSX.length === 0 ? (
         <div className='cont'>
         <div className='loading'>{loader}</div>
         </div> 
-    ) : (
-        items.map((item)=>{
-            return ( <item key={item.id} item={item.title}/>)
-            console.log(item)
-        })
-    )}
+    ) : itemsJSX }
     </div>
     )
 }
