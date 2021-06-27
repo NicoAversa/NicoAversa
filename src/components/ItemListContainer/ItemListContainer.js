@@ -54,7 +54,7 @@ const products = [
         error => {
             console.log('ALGO FALLO')
         })
-    }, [])
+    }, []) // [] parametro a pasar al useEffect para q no genere el loop infinito 
 
     return (     
         
