@@ -3,44 +3,46 @@ import logo from '../../images/gstlogo.png'
 import './NavBar.css'
 import {CartWidget} from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faHome, faKeyboard, faAngleDown, faInfo } from '@fortawesome/free-solid-svg-icons'
+import {NavLink} from 'react-router-dom'
 
 export const NavBar = () =>{
     const iconSearch=<FontAwesomeIcon icon={faSearch}/>
+    const iconHome=<FontAwesomeIcon icon={faHome}/>
+    const iconProduct=<FontAwesomeIcon icon={faKeyboard}/>
+    const iconArrow=<FontAwesomeIcon icon={faAngleDown}/>
+    const iconHelp=<FontAwesomeIcon icon={faInfo}/>
     
     return (
-        <nav>
-            <img className='logo' src={logo} height={50} width={100} />
-            <div className="Nav">
-            <ul className='menu'>
-                <li><a>HOME<svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-    </a></li>
-                <li><a>Productos<svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-    </a></li>
-                <li><a>Ofertas<svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-    </a></li>
-                <li><a>Mi Cuenta <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-    </a>
-                    <ul className='submenu'>
-                        <li><a>Mis Datos <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-    </a></li>
-                        <li><a>Mis Compras <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-    </a></li>
-                        <li><a>Salir <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-                        </a></li>
-                    </ul>
-                </li>
-                <li><a>Legales <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-                </a></li>
-                <li><a>La empresa <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-                </a></li>
-                <li><a>Ayuda <svg viewBox="0 0 455.555 48"><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44" /><path d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"/></svg>
-                </a></li>
-                
-            </ul>
-            </div>
-            <div className='search'> {iconSearch} <input className='buscar' type='text' placeholder='Buscar Producto '/> <CartWidget/> </div>
-            
-        </nav>
+    <nav className="menu">
+    <div className="header">
+    <NavLink className="link" to='/'><img className='logo' src={logo} height={50} width={100} /></NavLink>
+    <ul className='main-menu'>
+    
+    <li><NavLink exact activeClassName='active' to='/' className="link"><i>{iconHome}</i><a>HOME</a></NavLink></li>
+    <li className="with-submenu"><i>{iconProduct}</i><a>Productos {iconArrow}</a>
+    <ul className='submenu'>
+    <li><NavLink activeClassName='link-active' exact to='/category/Todos' className="link"><a>Vista Categorías</a></NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/ItemDetailContainer/ItemDetailContainer' className="link"><a>Insumos</a></NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/Products/Dispositivos' className="link"><a>Dispositivos</a></NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/Products/Monitores' className="link"><a>Monitores</a></NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/Products/Notebooks' className="link"><a>Notebooks</a></NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/Products/Equipos' className="link"><a>Equipos</a></NavLink></li>
+    </ul>
+    </li>
+    <li><NavLink activeClassName='link-active' exact to='/Products/Offers' className="link"><a>Ofertas</a></NavLink></li>
+    <li className="with-submenu"><NavLink  to='/MisDatos' className="link"><a>Mis Datos {iconArrow}</a>
+    <ul className='submenu'>
+    <li><NavLink activeClassName='link-active'  to='/MisDatos/MisCompras' className="link"><a>Mis Compras </a></NavLink></li>
+    <li><NavLink activeClassName='link-active'  to='/Logout' className="link"><a>Salir</a></NavLink></li>
+    </ul>
+    </NavLink>
+    </li>
+    <li><NavLink activeClassName='link-active'  to='/Help' className="link"><i>{iconHelp}</i><a>Ayuda</a></NavLink></li>
+    <div className='search'> {iconSearch} <input className='buscar' type='text' placeholder='Buscar Producto '/> <NavLink activeClassName='link-active' className='link' to='/cart'><CartWidget/></NavLink> </div>
+    </ul>
+    
+    </div>
+    </nav>
     )
 }

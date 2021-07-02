@@ -39,9 +39,9 @@ export const ItemCount = (props)=>{
         <div className='container'>
         <br/>
         <div className='count'>
-        <button id='btnMinus' onClick={minus} disabled={itemAmount <= props.initial}><i>{iconMinus}</i></button>
+        <button id='btnMinus' onClick={minus} disabled={itemAmount <= props.initial}>-</button>
         <label className='contador'>{itemAmount}</label>
-        <button id='btnAdd' onClick={add} disabled={itemAmount>=props.stock}><i>{iconPlus}</i></button>
+        <button id='btnAdd' onClick={add} disabled={itemAmount>=props.stock}>+</button>
         </div>
         <br/>
         <p>Stock Disponible:<b>{props.stock}</b></p>

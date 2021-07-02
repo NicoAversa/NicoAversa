@@ -1,6 +1,7 @@
 import './ItemDetailContainer.css'
 import React,{useState, useEffect} from 'react'
 import {ItemDetail} from '../ItemDetail/ItemDetail'
+import {Page} from '../../components/page/page'
 
 export const ItemDetailContainer = () =>{
 
@@ -34,8 +35,8 @@ const [itemsMostrar, setItemsMostrar] = useState({})
 
     return (     
         
-        <>
+        <Page>
             <ItemDetail item={itemsMostrar}/>
-        </>
+        </Page>
         
         )}

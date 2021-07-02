@@ -1,9 +1,8 @@
-/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons' */
+
 import {ItemCount} from '../ItemCount/ItemCount'
 import './Item.css'
 import React, { useEffect, useState } from 'react'
+import {NavLink} from 'react-router-dom'
 
 export const Item = ({item})=>{
 
@@ -23,12 +22,9 @@ export const Item = ({item})=>{
         <h3>{item.title}</h3>
         <label className="title">Código:</label>
         <p>{item.id}</p>
-        <label>Descripción:</label>
-        <p className="descr">{item.description}</p>
-        <label className="title">Precio:</label>
         <h2>{item.price}</h2>
         </div>
-        <ItemCount initial={1} stock={7} onAdd={1} />
+        <ItemCount className="count" initial={1} stock={7} onAdd={1} />
     </div> 
         </item>
     )

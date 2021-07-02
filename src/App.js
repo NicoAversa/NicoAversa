@@ -9,22 +9,23 @@ import React from 'react'
 
 function App() {
 
-  //return <BrowserRouter>
-  //<Switch>
-  //<Route path="/cart">
-  // <p>Carro1</p>
-//<Route path="/">
-//</Route>
-// <p>Home</p>
-  //</Route>
-  //</Switch>
- // </BrowserRouter>
+  return <BrowserRouter>
+  <Switch>
+  <Route path="/cart">
+  <p>Carro1</p>
+  <Route path="/">
+  </Route>
+  <p>Home</p>
+  </Route>
+  </Switch>
+  <footer/>
+  </BrowserRouter>
 
 
-  return <div className='App'>
+/*   return <div className='App'>
   <NavBar/>
   <ItemDetailContainer/>
-  </div>
+  </div> */
 }
 
 export default App;

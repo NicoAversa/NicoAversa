@@ -25,6 +25,7 @@
 
 }
 .container{
+align-items: center;
 margin-top: 15px;
 width:120px;
 height:100px;
