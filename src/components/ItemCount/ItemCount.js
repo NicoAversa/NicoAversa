@@ -1,22 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
-import { faMinusSquare } from '@fortawesome/free-solid-svg-icons'
 import './itemCount.css'
 import React, { useState } from 'react'
 
-export const ItemCount = (props)=>{
+export const ItemCount = ({initial=1,stock,onAdd})=>{
 
-    const iconPlus=<FontAwesomeIcon icon={faPlusSquare}/>
-    const iconMinus=<FontAwesomeIcon icon={faMinusSquare}/>
-    
-/*   const [stock, setStock] = useState()
-    const [initial, setInitial] = useState()
-    const [onAdd, setOnAdd] = useState() */
-
-    const [itemAmount, setItemAmount] = useState(props.initial)
+    const [itemAmount, setItemAmount] = useState(initial)
 
     const minus = () => {
-        if (props.stock > 0) {
+        if (stock > 0) {
             if (itemAmount > 1) {
                 let newAdd = itemAmount-1
                 setItemAmount(newAdd)  
@@ -25,8 +15,8 @@ export const ItemCount = (props)=>{
     }
     
     const add = () => {
-        if (props.stock > 0) {
-            if (itemAmount <= props.stock) {
+        if (stock > 0) {
+            if (itemAmount <= stock) {
                 let newAdd = itemAmount+1
                 setItemAmount(newAdd)       
             }
@@ -39,13 +29,13 @@ export const ItemCount = (props)=>{
         <div className='container'>
         <br/>
         <div className='count'>
-        <button id='btnMinus' onClick={minus} disabled={itemAmount <= props.initial}>-</button>
+        <button id='btnMinus' onClick={minus} disabled={itemAmount <= initial}>-</button>
         <label className='contador'>{itemAmount}</label>
-        <button id='btnAdd' onClick={add} disabled={itemAmount>=props.stock}>+</button>
+        <button id='btnAdd' onClick={add} disabled={itemAmount>=stock}>+</button>
         </div>
         <br/>
-        <p>Stock Disponible:<b>{props.stock}</b></p>
-        <button className='btnCarrito' onClick={() => props.onAdd(itemAmount)}>Agregar al carrito</button></div>
+        <p>Stock Disponible:<b>{stock}</b></p>
+        <button disabled={!stock} className='btnCarrito' onClick={onAdd} value={itemAmount}>Agregar al carrito </button></div>
     </div>
         </count>
     )

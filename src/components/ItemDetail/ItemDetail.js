@@ -1,9 +1,19 @@
 import {ItemCount} from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import React, { useEffect, useState } from 'react'
+import {Link, link} from 'react-router-dom'
 
-export const ItemDetail = ({item})=>{
+export const ItemDetail = ({item} )=>{
+    const[compra, setcompra]= useState(0)
+    const[precioProducto, setprecioProducto]=useState(0)
 
+    const onAdd=(quantityToAdd)=>{
+        setcompra(quantityToAdd.target.value)
+        setprecioProducto((quantityToAdd.target.value)*item.price)
+        document.querySelector('#comprando').style.display='none'
+        document.querySelector('#comprado').style.display='block'
+        console.log(compra, precioProducto)
+    }
     return (
         <item>
     <div className='item-data'>
@@ -16,8 +26,11 @@ export const ItemDetail = ({item})=>{
         <p className="descr">{item.description}</p>
         <label className="title">Precio:</label>
         <h2>{item.price}</h2>
+        <div id='comprando'>
+        <ItemCount className="count" stock={5} onAdd={onAdd} />
         </div>
-        <ItemCount initial={1} stock={7} onAdd={1} />
+        <Link className='link' to={'/cart'}> <button id='comprado' className='btnEnd'>Terminar Compra</button></Link>
+        </div>
     </div> 
         </item>
     )

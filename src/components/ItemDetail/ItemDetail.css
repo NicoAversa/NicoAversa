@@ -1,0 +1,26 @@
+.count{
+    align-items: center;
+}
+.btnEnd{
+    display:none;
+    text-decoration: none;
+    background-color:white;
+    font-weight: bold;
+    color: green;
+    border: 1px solid green;
+    width:auto;
+    height:20px;
+    margin-top:5px;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnEnd:hover{
+    background-color:Green;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}

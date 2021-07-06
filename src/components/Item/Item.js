@@ -1,19 +1,15 @@
-
-import {ItemCount} from '../ItemCount/ItemCount'
 import './Item.css'
 import React, { useEffect, useState } from 'react'
 import {NavLink} from 'react-router-dom'
 
 export const Item = ({item})=>{
+    const[itemId, setitemId]= useState(0)
 
-    /*   const iconPlus=<FontAwesomeIcon icon={faPlusSquare}/>
-    const iconMinus=<FontAwesomeIcon icon={faMinusSquare}/> */
-        
-/*     const onAdd = (items) => {
-        if (props.stock !== 0) {
-            alert('Ahora se deberian agregar ' + items + ' items al carrito!')
-        }
-    }  */
+    const selItem=(itemSeleccionado)=>{
+        setitemId(itemSeleccionado.target.value)
+        console.log(itemSeleccionado.target.value)
+    }
+
     return (
         <item>
     <div className='item-data'>
@@ -24,7 +20,7 @@ export const Item = ({item})=>{
         <p>{item.id}</p>
         <h2>{item.price}</h2>
         </div>
-        <ItemCount className="count" initial={1} stock={7} onAdd={1} />
+        <button value={itemId} onClick={selItem}>Ver Detalles</button>
     </div> 
         </item>
     )
