@@ -1,7 +1,7 @@
 import {ItemCount} from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import React, { useEffect, useState } from 'react'
-import {Link, link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export const ItemDetail = ({item} )=>{
     const[compra, setcompra]= useState(0)

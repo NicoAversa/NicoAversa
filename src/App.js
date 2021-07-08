@@ -5,20 +5,13 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Switch, Route, BrowserRouter} from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {routes} from './pages/routes'
 import React from 'react'
 
 function App() {
 
   return <BrowserRouter>
-  <Switch>
-  <Route path="/cart">
-  <p>Carro1</p>
-  <Route path="/">
-  </Route>
-  <p>Home</p>
-  </Route>
-  </Switch>
-  <footer/>
+        <Router/>
   </BrowserRouter>
 
 

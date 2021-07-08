@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './ItemList.css'
 import {Item} from '../Item/Item'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useParams } from 'react'
 
 export const ItemList = ({itemsMostrar})=>{
     const loader=<FontAwesomeIcon icon={faSpinner}/>
@@ -12,8 +12,10 @@ export const ItemList = ({itemsMostrar})=>{
     <div className='itemListContainer'>
     {itemsJSX.length === 0 ? (
         <div className='cont'>
-        <div className='loading'>{loader}</div>
+            <h3>CATEGORIA SIN PRODUCTOS</h3>
+        <div className='loading'></div>
         </div> 
+        
     ) : itemsJSX }
     </div>
     )

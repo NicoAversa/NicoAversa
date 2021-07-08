@@ -24,3 +24,6 @@
 -moz-border-radius: 5px 5px 5px 5px;
 -webkit-border-radius: 5px 5px 5px 5px;
 }
+.link{
+    text-decoration: none;
+}

@@ -7,6 +7,7 @@ import {Category} from './Category/category'
 import {MisDatos} from './MisDatos/MisDatos'
 import {NotFound} from './notfound/notFound'
 import {ItemDetailContainer} from '../components/ItemDetailContainer/ItemDetailContainer'
+import {ItemListContainer} from '../components/ItemListContainer/ItemListContainer'
 
 export const Routes= ()=>{
     return (
@@ -21,20 +22,12 @@ export const Routes= ()=>{
                     <Cart/>
                 </Route>
 
-                <Route path='/Products/:categoryId'>
-                    <Categories/>
+                <Route path='/Category/:categoryId'>
+                    <ItemListContainer/>
                 </Route>
 
-                <Route path='/Category/:MyData'>
-                    <Category/>
-                </Route>
-
-                <Route path='/ItemDetailContainer/ItemDetailContainer'>
+                <Route path='/Item/:itemId'>
                     <ItemDetailContainer/>
-                </Route>
-
-                <Route path='/MisDatos/:MyData'>
-                    <MisDatos/>
                 </Route>
 
                 <Route path='*'>
