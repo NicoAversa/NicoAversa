@@ -3,16 +3,21 @@ import './ItemDetail.css'
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 
+
 export const ItemDetail = ({item} )=>{
+    
     const[compra, setcompra]= useState(0)
     const[precioProducto, setprecioProducto]=useState(0)
+    const[categoria, setCategoria]=useState()
 
-    const onAdd=(quantityToAdd)=>{
-        setcompra(quantityToAdd.target.value)
-        setprecioProducto((quantityToAdd.target.value)*item.price)
+    const onAdd=(quantity)=>{
+        console.log(quantity)
+        setcompra(quantity)
+        setprecioProducto(parseInt(quantity)*parseInt(item.price))
+        console.log(precioProducto)
+        console.log(Number(item.price)*Number(quantity))
         document.querySelector('#comprando').style.display='none'
         document.querySelector('#comprado').style.display='block'
-        console.log(compra, precioProducto)
     }
     return (
         <item>

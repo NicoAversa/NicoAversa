@@ -1,6 +1,6 @@
 import './Item.css'
 import React, { useEffect, useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export const Item = ({item})=>{
     const[itemId, setitemId]= useState(0)
@@ -20,7 +20,7 @@ export const Item = ({item})=>{
         <p>{item.id}</p>
         <h2>{item.price}</h2>
         </div>
-        <button value={itemId} onClick={selItem}>Ver Detalles</button>
+        <Link to={`/item/${item.id}`}><div>Ver Detalles</div></Link>
     </div> 
         </item>
     )
