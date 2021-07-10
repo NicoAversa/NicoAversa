@@ -1,24 +1,31 @@
 import {ItemCount} from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import React, { useEffect, useState } from 'react'
+import { useContext } from 'react'
 import {Link} from 'react-router-dom'
-
+import { CartContext } from '../../context/CartContext'
 
 export const ItemDetail = ({item} )=>{
     
-    const[compra, setcompra]= useState(0)
-    const[precioProducto, setprecioProducto]=useState(0)
-    const[categoria, setCategoria]=useState()
-
+    const [itemAmount, setitemAmount] = useState(0)
+    const [precioProducto, setprecioProducto] = useState(0)
+    const [categoria, setCategoria] = useState()
+    const { addItem } = useContext(CartContext)
+    
     const onAdd=(quantity)=>{
-        console.log(quantity)
-        setcompra(quantity)
+        setitemAmount(quantity)
+        setprecioProducto(item.price)
+        setCategoria(item.category)
+        addItem(quantity,item)
+
         setprecioProducto(parseInt(quantity)*parseInt(item.price))
-        console.log(precioProducto)
-        console.log(Number(item.price)*Number(quantity))
         document.querySelector('#comprando').style.display='none'
         document.querySelector('#comprado').style.display='block'
     }
+    console.log('cantidad:', itemAmount)
+    console.log('precio:', precioProducto)
+    console.log('categoria:', categoria)
+
     return (
         <item>
     <div className='item-data'>
@@ -32,9 +39,9 @@ export const ItemDetail = ({item} )=>{
         <label className="title">Precio:</label>
         <h2>{item.price}</h2>
         <div id='comprando'>
-        <ItemCount className="count" stock={5} onAdd={onAdd} />
+        <ItemCount className="count" stock={5} initial={1} onAdd={onAdd} />
         </div>
-        <Link className='link' to={'/cart'}> <button id='comprado' className='btnEnd'>Terminar Compra</button></Link>
+        <Link to='./cart'> <button id='comprado' className='btnEnd'>Terminar Compra</button></Link>
         </div>
     </div> 
         </item>

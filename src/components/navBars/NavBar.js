@@ -20,16 +20,16 @@ export const NavBar = () =>{
     <NavLink className="link" to='/'><img className='logo' src={logo} height={50} width={100} /></NavLink>
     <ul className='main-menu'>
     
-    <li><NavLink exact activeClassName='active' to='/' className="link"><i>{iconHome}</i><a>HOME</a></NavLink></li>
-    <li className="with-submenu"><i>{iconProduct}</i><a>Productos {iconArrow}</a>
+    <li><NavLink exact activeClassName='active' to='/' className="link"><i>{iconHome}</i>HOME</NavLink></li>
+    <li className="with-submenu"><i>{iconProduct}</i>Productos {iconArrow}
     <ul className='submenu'>
-    <li><NavLink activeClassName='link-active' exact to='/category/Perifericos' className="link"><a>Perifericos</a></NavLink></li>
-    <li><NavLink activeClassName='link-active' exact to='/category/Monitores' className="link"><a>Monitores</a></NavLink></li>
-    <li><NavLink activeClassName='link-active' exact to='/category/Notebooks' className="link"><a>Notebooks</a></NavLink></li>
-    <li><NavLink activeClassName='link-active' exact to='/category/Equipos' className="link"><a>Equipos</a></NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/category/Perifericos' className="link">Perifericos</NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/category/Monitores' className="link">Monitores</NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/category/Notebooks' className="link">Notebooks</NavLink></li>
+    <li><NavLink activeClassName='link-active' exact to='/category/Equipos' className="link">Equipos</NavLink></li>
     </ul>
     </li>
-    <NavLink activeClassName='link-active' className='link' to='/cart'><CartWidget/></NavLink>
+    <NavLink activeClassName='link-active' className='link' to='./cart'><CartWidget/></NavLink>
     </ul>
     </div>
     </nav>

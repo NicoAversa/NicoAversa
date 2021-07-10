@@ -71,7 +71,7 @@ const products = [
 
     return (     
         
-        <items clasName='list'>
+        <items className='list'>
             {props.greetings}
             <NavBar/>
             <h1>{categoryId}</h1>

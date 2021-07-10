@@ -1,15 +1,20 @@
 
 import './App.css'
-import {Switch, Route, BrowserRouter} from "react-router-dom"
-import {routes} from './pages/routes'
-import {React, useContext} from 'react'
-import {CartContext} from './context/CartContext'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import {React} from 'react'
+import {CartProvider} from './context/CartContext'
 
 function App() {
   
-  return <BrowserRouter>
+  return (
+        <CartProvider>
+    <BrowserRouter>
         <Router/>
         </BrowserRouter>
+        </CartProvider>  
+          )
+          
+        
 
 }
 

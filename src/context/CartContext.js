@@ -1,8 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
-const CartContext = createContext()
-const CartProvider = ({children, defaultCart})=>{
+export const CartContext = createContext();
+console.log('cartcontext:')
+
+    export const CartProvider = ({children, defaultCart})=>{
+
     const[cart, setCart] = useState(defaultCart)
+    console.log(cart)
 
     const removeItem=(itemId)=>{
         const newCart=cart.slice()
@@ -12,7 +16,7 @@ const CartProvider = ({children, defaultCart})=>{
 
     const addItem = (item, quantity) =>{
         if (isInCart(item.id)){
-            console.log('El iteme ya existe')
+            console.log('El item ya existe')
             const object = cart.find(obj => obj.item.id === item.id)
             object.quantity += quantity
         }else{
@@ -29,11 +33,10 @@ const CartProvider = ({children, defaultCart})=>{
     const updateCart = (obj)=>{
         setCart([...cart, obj])
     }
-    console.log('cartOut:', cart)
+    console.log('cartOut:', cart) 
     return (
         <CartContext.Provider value={{clearCart, addItem, updateCart}}>
             {children}
         </CartContext.Provider>
     )
 }
-export {CartProvider, CartContext}

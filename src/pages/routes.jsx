@@ -3,14 +3,14 @@ import {Switch, Route, BrowserRouter as Router} from "react-router-dom"
 import {Home} from './home/home'
 import {Cart} from './cart/cart'
 import {Categories} from './Products/Categories'
-import {Category} from './Category/category'
-import {MisDatos} from './MisDatos/MisDatos'
 import {NotFound} from './notfound/notFound'
 import {ItemDetailContainer} from '../components/ItemDetailContainer/ItemDetailContainer'
 import {ItemListContainer} from '../components/ItemListContainer/ItemListContainer'
+import {CartProvider} from '../context/CartContext'
 
 export const Routes= ()=>{
     return (
+        <CartProvider>
         <Router>
             <Switch>
 
@@ -36,5 +36,6 @@ export const Routes= ()=>{
 
             </Switch>
         </Router>
+        </CartProvider>
     )
 }
