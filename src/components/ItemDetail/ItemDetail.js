@@ -16,7 +16,7 @@ export const ItemDetail = ({item} )=>{
         setitemAmount(quantity)
         setprecioProducto(item.price)
         setCategoria(item.category)
-        addItem(quantity,item)
+        addItem(item,quantity)
 
         setprecioProducto(parseInt(quantity)*parseInt(item.price))
         document.querySelector('#comprando').style.display='none'

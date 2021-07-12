@@ -6,11 +6,9 @@ import {Categories} from './Products/Categories'
 import {NotFound} from './notfound/notFound'
 import {ItemDetailContainer} from '../components/ItemDetailContainer/ItemDetailContainer'
 import {ItemListContainer} from '../components/ItemListContainer/ItemListContainer'
-import {CartProvider} from '../context/CartContext'
 
 export const Routes= ()=>{
     return (
-        <CartProvider>
         <Router>
             <Switch>
 
@@ -36,6 +34,5 @@ export const Routes= ()=>{
 
             </Switch>
         </Router>
-        </CartProvider>
     )
 }

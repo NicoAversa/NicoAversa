@@ -1,28 +1,31 @@
 import { createContext, useState } from 'react';
 
+const defaultCart = [{}]
+
 export const CartContext = createContext();
 console.log('cartcontext:')
 
-    export const CartProvider = ({children, defaultCart})=>{
+    export const CartProvider = ({children})=>{
 
     const[cart, setCart] = useState(defaultCart)
-    console.log(cart)
+    console.log('cant. carro: ', cart.quantity)
 
-    const removeItem=(itemId)=>{
+        const removeItem=(itemId)=>{
         const newCart=cart.slice()
         const filterCart = newCart.filter(obj => obj.item.id !== itemId)
         setCart(filterCart)
     }
 
     const addItem = (item, quantity) =>{
-        if (isInCart(item.id)){
+      if (isInCart(item.id)){
             console.log('El item ya existe')
-            const object = cart.find(obj => obj.item.id === item.id)
+            const object = cart.find (obj => obj.item.id === item.id)
             object.quantity += quantity
-        }else{
+        }else{   
             updateCart({item, quantity})
-        }
+         }  
     }
+    
     const clearCart = () => {
         console.log('Limpieza de Carro')
         setCart(defaultCart)
@@ -30,12 +33,12 @@ console.log('cartcontext:')
     const isInCart=(itemId)=>{
         return cart.find(obj => obj.item.id === parseInt(itemId))? true : false
     }
-    const updateCart = (obj)=>{
-        setCart([...cart, obj])
-    }
+    const updateCart = (obj) => {
+        setCart({...cart, obj })
+    } 
     console.log('cartOut:', cart) 
     return (
-        <CartContext.Provider value={{clearCart, addItem, updateCart}}>
+        <CartContext.Provider value={{clearCart, addItem, updateCart, cart}}>
             {children}
         </CartContext.Provider>
     )
