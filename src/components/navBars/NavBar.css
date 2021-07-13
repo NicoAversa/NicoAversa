@@ -31,6 +31,11 @@ color: white;
     color: black;
     font-weight: bold;
 }
+
+.link-activeCarro{
+    color: white;
+    font-weight: bold;
+}
 .logo{
     padding: 0.6em 0 0 0 ;
     display: flex;

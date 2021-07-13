@@ -3,8 +3,29 @@ import React,{useState, useEffect} from 'react'
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import {Page} from '../../components/page/page'
 import { useParams } from 'react-router'
+import { dataBase } from '../../firebase/firebase'
 
 export const ItemDetailContainer = () =>{
+
+/*     useEffect(()=>{
+        const db = getFirestore()
+
+        const itemCollection=db.collection('tienda-gst')
+        const item = itemCollection.doc(itemId)
+
+        item.get().then((doc)=>{
+            if (!doc.exists){
+                console.log('El item no existe!')
+                return
+            }
+            console.log('Item encontrado')
+            setitemsMostrar({id: doc-id, ...doc.data()})
+        }).catch((error)=>{
+            console.log('Error buscando items', error)
+        }).finally(()=>{
+            setLoading(false)
+        })
+    }, []) */
 
     const product = [
         {
@@ -16,7 +37,7 @@ export const ItemDetailContainer = () =>{
             description: 
             " Interruptores mecánicos personalizados Interruptor de modo personalizable Pulse Fn  inspgdn para cambiar a modo de Progamer Construcción de aluminio y ABS -Fabricado con 104 teclas flotante estándar.",
             price: 
-            "$3900",
+            "3900",
             category:
             "Perifericos"
         },
@@ -29,7 +50,7 @@ export const ItemDetailContainer = () =>{
             description: 
             " PICTEK Gaming Mouse Wired, 8 Programmable Buttons, Chroma RGB Backlit, 7200 DPI Adjustable, ",
             price: 
-            "$3500",
+            "3500",
             category:
             "Perifericos"
         },
@@ -42,7 +63,7 @@ export const ItemDetailContainer = () =>{
             description: 
             " Descubri una verdadera experiencia inmersiva con el monitor curvo de Samsung. La gran curva de Samsung te pondrá en el centro de tu contenido multimedia.",
             price: 
-            "$32800",
+            "32800",
             category:
             "Monitores"
         },

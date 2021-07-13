@@ -4,7 +4,25 @@ import {ItemCount} from '../ItemCount/ItemCount'
 import {Item} from '../Item/Item'
 import {ItemList} from '../ItemList/ItemList'
 import { NavBar } from '../navBars/NavBar'
+import { dataBase } from '../../firebase/firebase'
 export const ItemListContainer = (props) =>{
+
+    // conexión a firebase----->
+/*     useEffect(()=>{
+        setLoading(true);
+        const db = getFirestore();
+        const itemCollection = db.collection("tienda-gst");
+        itemCollection.get().then((querySnapshot)=>{
+        if (querySnapshot.size === 0){
+            console.log('No hay resultados');
+        }
+        setItemsMostrar(querySnapshot.docs.map(doc.data()));
+    }).catch((error)=>{
+        console.log('Error buscando Items', error);
+    }).finally(()=>{
+        setLoading(false);
+    })
+}, []); */
 
 const products = [
         {
@@ -16,7 +34,7 @@ const products = [
             description: 
             " Interruptores mecánicos personalizados Interruptor de modo personalizable Pulse Fn  inspgdn para cambiar a modo de Progamer Construcción de aluminio y ABS -Fabricado con 104 teclas flotante estándar.",
             price: 
-            "$3900",
+            "3900",
             category:
             "Perifericos"
         },
@@ -29,7 +47,7 @@ const products = [
             description: 
             " PICTEK Gaming Mouse Wired, 8 Programmable Buttons, Chroma RGB Backlit, 7200 DPI Adjustable, ",
             price: 
-            "$3500",
+            "3500",
             category:
             "Perifericos"
         },
@@ -42,7 +60,7 @@ const products = [
             description: 
             " Descubri una verdadera experiencia inmersiva con el monitor curvo de Samsung. La gran curva de Samsung te pondrá en el centro de tu contenido multimedia.",
             price: 
-            "$32800",
+            "32800",
             category:
             "Monitores"
         },

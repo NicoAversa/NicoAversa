@@ -5,6 +5,8 @@ import {CartWidget} from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faHome, faKeyboard, faAngleDown, faInfo } from '@fortawesome/free-solid-svg-icons'
 import {NavLink} from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 export const NavBar = () =>{
     const iconSearch=<FontAwesomeIcon icon={faSearch}/>
@@ -12,6 +14,7 @@ export const NavBar = () =>{
     const iconProduct=<FontAwesomeIcon icon={faKeyboard}/>
     const iconArrow=<FontAwesomeIcon icon={faAngleDown}/>
     const iconHelp=<FontAwesomeIcon icon={faInfo}/>
+    const { cart } = useContext(CartContext)
     
     return (
 
@@ -29,7 +32,7 @@ export const NavBar = () =>{
     <li><NavLink activeClassName='link-active' exact to='/category/Equipos' className="link">Equipos</NavLink></li>
     </ul>
     </li>
-    <NavLink activeClassName='link-active' className='link' to='./cart'><CartWidget/></NavLink>
+    <NavLink activeClassName='link-activeCarro' className='link' exact to='/cart'><CartWidget/></NavLink>
     </ul>
     </div>
     </nav>

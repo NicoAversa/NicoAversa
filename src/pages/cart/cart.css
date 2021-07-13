@@ -1,0 +1,113 @@
+.compra{
+    width: 50%;
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+}
+.btnVolver{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    background-color: #099c95;
+    border: 1px solid #099c95;
+    width:auto;
+    height:auto;
+    margin-top:10px;
+    text-align:center;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnVolver:hover{
+    background-color:#175b52;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnDanger{
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    background-color: #ba493c;
+    border: 1px solid #ba493c;
+    width:auto;
+    height:auto;
+    text-align:center;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnDanger:hover{
+    background-color:#721309;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnWarning{
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    background-color: #ba923c;
+    border: 1px solid #ba923c;;
+    width:auto;
+    height:auto;
+    text-align:center;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnWarning:hover{
+    background-color:#725310;;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnSuccess{
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    background-color: #94b15b;
+    border: 1px solid #94b15b;;
+    width:auto;
+    height:auto;
+    text-align:center;
+    padding: 5px;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnSuccess:hover{
+    background-color:#4f612b;;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.total{
+    font-weight: bold;
+    color: darkslategrey;
+}
+.compra ul {
+    float: left;
+    margin-left: 15px;
+    list-style: none;
+    border-style: solid;
+    padding: 15px;
+    width: 30%;
+}
+.compra ul:hover {
+    background-color: white;
+}

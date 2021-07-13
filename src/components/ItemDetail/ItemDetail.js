@@ -41,7 +41,7 @@ export const ItemDetail = ({item} )=>{
         <div id='comprando'>
         <ItemCount className="count" stock={5} initial={1} onAdd={onAdd} />
         </div>
-        <Link to='./cart' className="link"> <button id='comprado' className='btnEnd'>Terminar Compra</button></Link>
+        <Link exact to = '/cart' className="link"> <button id='comprado' className='btnEnd'>Terminar Compra</button></Link>
         </div>
     </div> 
         </item>

@@ -18,7 +18,7 @@ export const Item = ({item})=>{
         <h3>{item.title}</h3>
         <label className="title">Código:</label>
         <p>{item.id}</p>
-        <h2>{item.price}</h2>
+        <h2>$ {item.price}</h2>
         </div>
         <Link to={`/item/${item.id}`} className='btnDetalle'>Ver Detalles</Link>
     </div> 

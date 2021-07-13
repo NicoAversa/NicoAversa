@@ -8,15 +8,17 @@
 }
 .btnEnd{
     display:none;
+    cursor: pointer;
     text-decoration: none;
     background-color:white;
     font-weight: bold;
     color: #099c95;
     border: 1px solid #099c95;
     width:auto;
-    height:20px;
+    height:auto;
     margin-top:5px;
     text-align:center;
+    padding: 5px;
     border-radius: 5px 5px 5px 5px;
 -moz-border-radius: 5px 5px 5px 5px;
 -webkit-border-radius: 5px 5px 5px 5px;
