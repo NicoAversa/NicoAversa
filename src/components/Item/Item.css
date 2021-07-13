@@ -34,4 +34,32 @@
 }
 .count{
     align-items: center;
+    float: left;
+}
+.btnDetalle{
+    text-decoration: none;
+    background-color:#099c95;
+    font-weight: bold;
+    color: gre;
+    color: white;
+    border: 1px solid #099c95;
+    font-size: 1rem;
+    width:auto;
+    height:20px;
+    margin-top:5px;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.btnDetalle:hover{
+    background-color:#175b52;
+    color:white;
+    text-align:center;
+    border-radius: 5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+}
+.link{
+    text-decoration: none;
 }
