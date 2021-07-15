@@ -3,30 +3,12 @@ import React,{useState, useEffect} from 'react'
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import {Page} from '../../components/page/page'
 import { useParams } from 'react-router'
-import { dataBase } from '../../firebase/firebase'
+import { firebase } from '../../firebase/firebase'
+
 
 export const ItemDetailContainer = () =>{
 
-    useEffect(()=>{
-        const db = getFirestore()
-
-        const itemCollection=db.collection('items')
-        const item = itemCollection.doc(itemId)
-
-        item.get().then((doc)=>{
-            if (!doc.exists){
-                console.log('El item no existe!')
-                return
-            }
-            console.log('Item encontrado')
-            setitemsMostrar({id: doc-id, ...doc.data()})
-        }).catch((error)=>{
-            console.log('Error buscando items', error)
-        }).finally(()=>{
-            setLoading(false)
-        })
-    }, []) 
-
+    
     const product = [
         {
             imgUrl: 
@@ -70,8 +52,27 @@ export const ItemDetailContainer = () =>{
     ]
     const {itemId} = useParams()
 
-    const [itemsMostrar, setitemsMostrar] = useState([])
+    const [itemsMostrar, setItemsMostrar] = useState([])
     
+    useEffect(()=>{
+        const db = getFirestore()
+
+        const itemCollection=db.collection('items')
+        const item = itemCollection.doc(itemId)
+
+        item.get().then((doc)=>{
+            if (!doc.exists){
+                console.log('El item no existe!')
+                return
+            }
+            console.log('Item encontrado')
+            setItemsMostrar({id: doc-id, ...doc.data()})
+        }).catch((error)=>{
+            console.log('Error buscando items', error)
+        }).finally(()=>{
+           // setLoading(false)
+        })
+    }, []) 
     
     useEffect(()=>{
         const getItemsMostrar=new Promise((resolve, reject)=>{
@@ -81,7 +82,7 @@ export const ItemDetailContainer = () =>{
             
     getItemsMostrar.then(
         (detalleProducto)=>{
-            setitemsMostrar(detalleProducto[0])
+            setItemsMostrar(detalleProducto[0])
         },
         error => {
             console.log('ALGO FALLO')

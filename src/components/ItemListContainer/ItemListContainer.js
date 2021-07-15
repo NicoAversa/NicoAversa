@@ -4,27 +4,12 @@ import {ItemCount} from '../ItemCount/ItemCount'
 import {Item} from '../Item/Item'
 import {ItemList} from '../ItemList/ItemList'
 import { NavBar } from '../navBars/NavBar'
-import { dataBase } from '../../firebase/firebase'
+import { firebase } from '../../firebase/firebase'
 export const ItemListContainer = (props) =>{
 
     //conexión a firebase----->
-    useEffect(()=>{
-        setLoading(true);
-        const db = getFirestore();
-        const itemCollection = db.collection("items");
-        itemCollection.get().then((querySnapshot)=>{
-        if (querySnapshot.size === 0){
-            console.log('No hay resultados');
-        }
-        setItemsMostrar(querySnapshot.docs.map(doc.data()));
-    }).catch((error)=>{
-        console.log('Error buscando Items', error);
-    }).finally(()=>{
-        setLoading(false);
-    })
-}, []); 
-
-const products = [
+    
+    const products = [
         {
             imgUrl: 
             'http://www.kuantumstore.com/web/image/product.product/10406/image_1024/%5BA5874%5D%20Teclado%20Gamer%20Mecanico%20Redragon%20k556%20RGB%20Devarajas?unique=b3346be',
@@ -66,16 +51,31 @@ const products = [
         },
     ]
     const {categoryId} = useParams()
-
+    
     const [itemsMostrar, setItemsMostrar] = useState([])
     
+    useEffect(()=>{
+       // setLoading(true);
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        itemCollection.get().then((querySnapshot) => {
+        if (querySnapshot.size === 0){
+            console.log('No hay resultados');
+        }
+        setItemsMostrar(querySnapshot.docs.map(doc => doc.data()));
+    }).catch((error) => {
+        console.log('Error buscando Items', error);
+    }).finally(() => {
+        //setLoading(false);
+    })
+}, []); 
     
     useEffect(()=>{
         const getItemsMostrar=new Promise((resolve, reject)=>{
             setTimeout(()=> resolve(products) ,1000)
             
         })
-            
+        
     getItemsMostrar.then(
         products => {
             const filtro = products.filter((cat)=>cat.category===categoryId)
