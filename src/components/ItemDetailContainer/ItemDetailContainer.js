@@ -7,10 +7,10 @@ import { dataBase } from '../../firebase/firebase'
 
 export const ItemDetailContainer = () =>{
 
-/*     useEffect(()=>{
+    useEffect(()=>{
         const db = getFirestore()
 
-        const itemCollection=db.collection('tienda-gst')
+        const itemCollection=db.collection('items')
         const item = itemCollection.doc(itemId)
 
         item.get().then((doc)=>{
@@ -25,7 +25,7 @@ export const ItemDetailContainer = () =>{
         }).finally(()=>{
             setLoading(false)
         })
-    }, []) */
+    }, []) 
 
     const product = [
         {

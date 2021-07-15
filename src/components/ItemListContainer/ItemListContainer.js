@@ -7,11 +7,11 @@ import { NavBar } from '../navBars/NavBar'
 import { dataBase } from '../../firebase/firebase'
 export const ItemListContainer = (props) =>{
 
-    // conexión a firebase----->
-/*     useEffect(()=>{
+    //conexión a firebase----->
+    useEffect(()=>{
         setLoading(true);
         const db = getFirestore();
-        const itemCollection = db.collection("tienda-gst");
+        const itemCollection = db.collection("items");
         itemCollection.get().then((querySnapshot)=>{
         if (querySnapshot.size === 0){
             console.log('No hay resultados');
@@ -22,7 +22,7 @@ export const ItemListContainer = (props) =>{
     }).finally(()=>{
         setLoading(false);
     })
-}, []); */
+}, []); 
 
 const products = [
         {
