@@ -19,6 +19,7 @@ export const ItemDetailContainer = () =>{
 
         item.get().then((doc)=>{
             if (!doc.exists){
+                console.log(item)
                 console.log('El item no existe!')
                 return
             }
@@ -31,6 +32,21 @@ export const ItemDetailContainer = () =>{
         })
     }, [itemId]) 
     
+    /*  useEffect(()=>{
+        const getItemsMostrar=new Promise((resolve, reject)=>{
+            setTimeout(()=> resolve(product.filter((producto)=>parseInt(producto.id)===parseInt(itemId))) ,1000)
+            
+        })
+            
+    getItemsMostrar.then(
+        (detalleProducto)=>{
+            setItemsMostrar(detalleProducto[0])
+        },
+        error => {
+            console.log('ALGO FALLO')
+        })
+        
+    }, [itemId]) // [] parametro a pasar al useEffect para q no genere el loop infinito  */
     return (     
         
         <Page>

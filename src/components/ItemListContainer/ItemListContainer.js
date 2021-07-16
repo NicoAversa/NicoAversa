@@ -10,19 +10,7 @@ export const ItemListContainer = (props) =>{
     //conexión a firebase----->
     
     const products = [
-        {
-            imgUrl: 
-            'http://www.kuantumstore.com/web/image/product.product/10406/image_1024/%5BA5874%5D%20Teclado%20Gamer%20Mecanico%20Redragon%20k556%20RGB%20Devarajas?unique=b3346be',
-            title: 
-            "Teclado Gamer Mecánico ",
-            id: "1254",
-            description: 
-            " Interruptores mecánicos personalizados Interruptor de modo personalizable Pulse Fn  inspgdn para cambiar a modo de Progamer Construcción de aluminio y ABS -Fabricado con 104 teclas flotante estándar.",
-            price: 
-            "3900",
-            category:
-            "Perifericos"
-        },
+
         {
             imgUrl: 
             "https://http2.mlstatic.com/D_NQ_NP_672835-MLA30090470081_042019-O.webp",
@@ -58,7 +46,8 @@ export const ItemListContainer = (props) =>{
        // setLoading(true);
         const db = database;
         const itemCollection = db.collection("items");
-        itemCollection.get().then((querySnapshot) => {
+        const categorias= itemCollection.where('category',"==",categoryId)
+        categorias.get().then((querySnapshot) => {
         if (querySnapshot.size === 0){
             console.log('No hay resultados');
         }
