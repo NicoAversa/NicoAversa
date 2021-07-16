@@ -4,7 +4,7 @@ import {ItemCount} from '../ItemCount/ItemCount'
 import {Item} from '../Item/Item'
 import {ItemList} from '../ItemList/ItemList'
 import { NavBar } from '../navBars/NavBar'
-import { firebase } from '../../firebase/firebase'
+import { database } from '../../firebase/firebase'
 export const ItemListContainer = (props) =>{
 
     //conexión a firebase----->
@@ -56,21 +56,21 @@ export const ItemListContainer = (props) =>{
     
     useEffect(()=>{
        // setLoading(true);
-        const db = getFirestore();
+        const db = database;
         const itemCollection = db.collection("items");
         itemCollection.get().then((querySnapshot) => {
         if (querySnapshot.size === 0){
             console.log('No hay resultados');
         }
-        setItemsMostrar(querySnapshot.docs.map(doc => doc.data()));
+        setItemsMostrar(querySnapshot.docs.map(doc => ({id:doc.id, ...doc.data()})));
     }).catch((error) => {
         console.log('Error buscando Items', error);
     }).finally(() => {
         //setLoading(false);
     })
-}, []); 
+}, [categoryId]); 
     
-    useEffect(()=>{
+    /* useEffect(()=>{
         const getItemsMostrar=new Promise((resolve, reject)=>{
             setTimeout(()=> resolve(products) ,1000)
             
@@ -86,7 +86,7 @@ export const ItemListContainer = (props) =>{
         })
         
     }, [categoryId]) // [] parametro a pasar al useEffect para q no genere el loop infinito 
-
+ */
     return (     
         
         <items className='list'>

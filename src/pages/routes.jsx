@@ -2,7 +2,6 @@ import React from 'react'
 import {Switch, Route, BrowserRouter as Router} from "react-router-dom"
 import {Home} from './home/home'
 import {Cart} from './cart/cart'
-import {Categories} from './Products/Categories'
 import {NotFound} from './notfound/notFound'
 import {ItemDetailContainer} from '../components/ItemDetailContainer/ItemDetailContainer'
 import {ItemListContainer} from '../components/ItemListContainer/ItemListContainer'

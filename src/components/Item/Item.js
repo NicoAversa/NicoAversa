@@ -1,5 +1,5 @@
 import './Item.css'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 
 export const Item = ({item})=>{

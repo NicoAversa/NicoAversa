@@ -6,7 +6,7 @@ import './cart.css'
 
 export const Cart = ()=>{
 
-    const { cart, removeItem, clearCart, addItem } = useContext(CartContext)
+    const { cart, removeItem, clearCart } = useContext(CartContext)
     let itemsCarro =false
     if (cart.length > 0){
         itemsCarro=true
