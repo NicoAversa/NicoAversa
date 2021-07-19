@@ -1,43 +1,13 @@
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router'
-import {ItemCount} from '../ItemCount/ItemCount'
-import {Item} from '../Item/Item'
 import {ItemList} from '../ItemList/ItemList'
-import { NavBar } from '../navBars/NavBar'
 import { database } from '../../firebase/firebase'
+import { Page } from '../page/page'
 export const ItemListContainer = (props) =>{
 
     //conexión a firebase----->
     
-    const products = [
 
-        {
-            imgUrl: 
-            "https://http2.mlstatic.com/D_NQ_NP_672835-MLA30090470081_042019-O.webp",
-            title: 
-            "Mouse Gamer ",
-            id: "1268",
-            description: 
-            " PICTEK Gaming Mouse Wired, 8 Programmable Buttons, Chroma RGB Backlit, 7200 DPI Adjustable, ",
-            price: 
-            "3500",
-            category:
-            "Perifericos"
-        },
-        {
-            imgUrl: 
-            "https://d34zlyc2cp9zm7.cloudfront.net/products/62b3b22c322b9b03a4bf90432096905871f7389d9c5b9b95bcf6060a60179c28.jpg_500",
-            title: 
-            'Monitor Curvo 24"',
-            id: "1108",
-            description: 
-            " Descubri una verdadera experiencia inmersiva con el monitor curvo de Samsung. La gran curva de Samsung te pondrá en el centro de tu contenido multimedia.",
-            price: 
-            "32800",
-            category:
-            "Monitores"
-        },
-    ]
     const {categoryId} = useParams()
     
     const [itemsMostrar, setItemsMostrar] = useState([])
@@ -51,14 +21,15 @@ export const ItemListContainer = (props) =>{
         if (querySnapshot.size === 0){
             console.log('No hay resultados');
         }
-        setItemsMostrar(querySnapshot.docs.map(doc => ({id:doc.id, ...doc.data()})));
+        setItemsMostrar(querySnapshot.docs.map(doc => ({id:doc.id, ...doc.data()}  )));
+        console.log(querySnapshot.docs.map(doc => ({id:doc.id}  )))
     }).catch((error) => {
         console.log('Error buscando Items', error);
     }).finally(() => {
         //setLoading(false);
     })
 }, [categoryId]); 
-    
+
     /* useEffect(()=>{
         const getItemsMostrar=new Promise((resolve, reject)=>{
             setTimeout(()=> resolve(products) ,1000)
@@ -78,15 +49,12 @@ export const ItemListContainer = (props) =>{
  */
     return (     
         
-        <items className='list'>
-            {props.greetings}
-            <NavBar/>
+        <Page className='list'>
             <h1>{categoryId}</h1>
             <ItemList itemsMostrar={itemsMostrar}/>
             <br/>
             <br/>
-
-        </items>
+        </Page>
         
         )
     } 

@@ -10,7 +10,6 @@ export const Routes= ()=>{
     return (
         <Router>
             <Switch>
-
                 <Route exact path='/'>
                     <Home/>
                 </Route>

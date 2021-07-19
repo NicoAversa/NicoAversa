@@ -5,11 +5,12 @@ import {Link} from 'react-router-dom'
 export const Item = ({item})=>{
     const[itemId, setitemId]= useState(0)
 
-    const selItem=(itemSeleccionado)=>{
+    /*    const selItem=(itemSeleccionado)=>{
         setitemId(itemSeleccionado.target.value)
         console.log(itemSeleccionado.target.value)
-    }
-
+    } */
+    console.log(item)
+    console.log({item})
     return (
         <item>
     <div className='item-data'>
