@@ -42,19 +42,23 @@ export const Cart = ()=>{
 
             orders.add(newOrder).then(({id})=>{
                 setOrderId(id)
-                console.log(id)
-                console.log('id orden: ',orderId)
+                console.log(orderId)
             }).catch(err=>{
                 setError(err)
             }).finally(()=>{})
-            alert(`GRACIAS POR SU COMPRA, SU NUMERO DE ORDEN ES: ${orderId}`)
+            
             clearCart()
     }  
     const sumaTotales = cart.reduce((prev, next)=>prev + next.item.price*next.quantity, 0)
     console.log(sumaTotales)
     return (
         <Page>
+        {orderId ? 
+        <div className='orderFinish'> <h3> Muchas gracias por tu compra, el ID de la misma es: </h3> <p className='orderFinish'><h2 className='orderNumber'>{orderId}</h2></p>
+        </div>:
+        <div>
         <h1>Carro</h1>
+        
         <div className='compra'>
         <h1>Items en el Carro</h1>
         {itemsCarro && cart.map( (productos) =>
@@ -80,6 +84,8 @@ export const Cart = ()=>{
         <br/>
         <Link className='btnVolver' exact to= '/' >Seguir Comprando</Link>
         </div>
+        </div>
+    }
     </Page>
     )
 }
