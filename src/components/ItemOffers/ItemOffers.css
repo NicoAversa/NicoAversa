@@ -1,7 +1,8 @@
-.item-data{
+.item-datas{
     width: 20%;
-    height: 500px;
+    height: 260px;
     border: 1px solid;
+    display: flexbox;
     float: left;
     padding: 10px;
     margin: 10px;

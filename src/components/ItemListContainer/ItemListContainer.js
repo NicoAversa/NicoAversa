@@ -30,23 +30,6 @@ export const ItemListContainer = (props) =>{
     })
 }, [categoryId]); 
 
-    /* useEffect(()=>{
-        const getItemsMostrar=new Promise((resolve, reject)=>{
-            setTimeout(()=> resolve(products) ,1000)
-            
-        })
-        
-    getItemsMostrar.then(
-        products => {
-            const filtro = products.filter((cat)=>cat.category===categoryId)
-            setItemsMostrar(filtro)
-        },
-        error => {
-            console.log('ALGO FALLO')
-        })
-        
-    }, [categoryId]) // [] parametro a pasar al useEffect para q no genere el loop infinito 
- */
     return (     
         
         <Page className='list'>
