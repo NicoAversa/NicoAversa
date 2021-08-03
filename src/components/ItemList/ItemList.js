@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './ItemList.css'
 import {Item} from '../Item/Item'
-import React, { useState, useEffect, useParams } from 'react'
+import React from 'react'
 
 export const ItemList = ({itemsMostrar})=>{
     const loader=<FontAwesomeIcon icon={faSpinner}/>

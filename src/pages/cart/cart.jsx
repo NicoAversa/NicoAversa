@@ -1,8 +1,11 @@
 import {Page} from '../../components/page/page'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import { database } from '../../firebase/firebase'
+import {Form} from '../../components/Forms/FormBuyers'
+import inputs from '../../components/Forms/inputs.json'
+
 import './cart.css'
 
 export const Cart = ()=>{
@@ -12,10 +15,33 @@ export const Cart = ()=>{
     if (cart.length > 0){
         itemsCarro=true
     }
-
     const [orderId, setOrderId]=useState()
     const [error, setError]=useState()
+    
+    //-------------------form-----------------------------------------
+    const [formData, setFormData]=useState(inputs)
+    
+    const [isFormDisabled, setFormDisabled]=useState(true)
 
+    useEffect(()=>{
+        if (formData.name ==='' || formData.surname ==='' || formData.age === ''){
+            setFormDisabled(true)
+        }else{
+            setFormDisabled(false)
+        }
+    },[formData])
+
+    const onInput=({target})=>{
+        const nextFormData={ ...formData, [target.name]:target.value}
+        setFormData(nextFormData)
+    }
+
+    function onSubmit(event){
+        event.preventDefault()
+        console.log(`Tu nombre es ${formData.name} y tu apellido es ${formData.surname}`)
+    }
+
+//-----------------------------------------------------------------------
     const finishBuy=()=>{
             const db = database;
             const orders = db.collection("orders")
@@ -50,7 +76,6 @@ export const Cart = ()=>{
             clearCart()
     }  
     const sumaTotales = cart.reduce((prev, next)=>prev + next.item.price*next.quantity, 0)
-    console.log(sumaTotales)
     return (
         <Page>
         {orderId ? 
@@ -73,6 +98,7 @@ export const Cart = ()=>{
         </ul>
         )}
         </div>
+
         <div className='totales'>
         <h1>TOTALES</h1>
         <h3 className='total'>$ {sumaTotales}</h3>
@@ -84,6 +110,12 @@ export const Cart = ()=>{
         <br/>
         <Link className='btnVolver' exact to= '/' >Seguir Comprando</Link>
         </div>
+        <Form
+        inputs={formData}
+        onInput={onInput}
+        onSubmit={onSubmit}
+        isSubmitDisabled={isFormDisabled}
+        />
         </div>
     }
     </Page>

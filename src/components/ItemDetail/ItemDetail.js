@@ -1,6 +1,6 @@
 import {ItemCount} from '../ItemCount/ItemCount'
 import './ItemDetail.css'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
@@ -22,12 +22,9 @@ export const ItemDetail = ({item} )=>{
         document.querySelector('#comprando').style.display='none'
         document.querySelector('#comprado').style.display='block'
     }
-    console.log('cantidad:', itemAmount)
-    console.log('precio:', precioProducto)
-    console.log('categoria:', categoria)
 
     return (
-        <item>
+        <>
     <div className='item-data'>
     <div className='image'><img className='imgs' src={item.imgUrl} alt='Imágen de producto'/></div>
         <div className='product'>
@@ -44,6 +41,6 @@ export const ItemDetail = ({item} )=>{
         <Link exact to = '/cart' className="link"> <button id='comprado' className='btnEnd'>Terminar Compra</button></Link>
         </div>
     </div> 
-        </item>
+        </>
     )
 }   

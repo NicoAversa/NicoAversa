@@ -5,9 +5,6 @@ import { database } from '../../firebase/firebase'
 import { Page } from '../page/page'
 export const ItemListContainer = (props) =>{
 
-    //conexión a firebase----->
-    
-
     const {categoryId} = useParams()
     
     const [itemsMostrar, setItemsMostrar] = useState([])
@@ -22,7 +19,6 @@ export const ItemListContainer = (props) =>{
             console.log('No hay resultados');
         }
         setItemsMostrar(querySnapshot.docs.map(doc => ({id:doc.id, ...doc.data()}  )));
-        console.log(querySnapshot.docs.map(doc => ({id:doc.id}  )))
     }).catch((error) => {
         console.log('Error buscando Items', error);
     }).finally(() => {

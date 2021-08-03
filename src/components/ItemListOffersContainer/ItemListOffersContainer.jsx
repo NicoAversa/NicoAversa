@@ -19,7 +19,6 @@ export const ItemListOffersContainer = (props) =>{
             console.log('No hay resultados');
         }
         setItemsOffers(querySnapshot.docs.map(doc => ({id:doc.id, ...doc.data()}  )));
-        console.log(querySnapshot.docs.map(doc => ({id:doc.id}  )))
     }).catch((error) => {
         console.log('Error buscando Items', error);
     }).finally(() => {

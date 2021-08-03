@@ -13,7 +13,7 @@ export const ItemListOffers = ({itemsOffers})=>{
     {itemsJSX.length === 0 ? (
         <div className='cont'>
             <h3>NO HAY OFERTAS POR EL MOMENTO</h3>
-        <div className='loading'></div>
+        <div className='loading'>{loader}</div>
         </div> 
         
     ) : itemsJSX }

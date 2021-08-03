@@ -1,0 +1,22 @@
+[
+    {
+        "label":"Nombre",
+        "name":"name",
+        "value":""
+    },
+    {
+        "label":"Apellido",
+        "name":"surname",
+        "value":""
+    },
+    {
+        "label":"Teléfono",
+        "name":"telephone",
+        "value":""
+    },
+    {
+        "label":"Edad",
+        "name":"age",
+        "value":""
+    }
+]
