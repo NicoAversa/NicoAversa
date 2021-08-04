@@ -31,8 +31,9 @@ export const Cart = ()=>{
         }
     },[formData])
 
-    const onInput=({target})=>{
-        const nextFormData={ ...formData, [target.name]:target.value}
+    const onInput=({ target }) => {
+        console.log(target)
+        const nextFormData={ ...formData, [target.name]: target.value}
         setFormData(nextFormData)
     }
 
@@ -100,6 +101,12 @@ export const Cart = ()=>{
         </div>
 
         <div className='totales'>
+        <Form
+        inputs={formData}
+        onInput={onInput}
+        onSubmit={onSubmit}
+        isSubmitDisabled={isFormDisabled}
+        />
         <h1>TOTALES</h1>
         <h3 className='total'>$ {sumaTotales}</h3>
         <button className='btnDanger' onClick={()=>{clearCart()}}>Vaciar Carrito</button>
@@ -110,12 +117,6 @@ export const Cart = ()=>{
         <br/>
         <Link className='btnVolver' exact to= '/' >Seguir Comprando</Link>
         </div>
-        <Form
-        inputs={formData}
-        onInput={onInput}
-        onSubmit={onSubmit}
-        isSubmitDisabled={isFormDisabled}
-        />
         </div>
     }
     </Page>
