@@ -31,10 +31,14 @@ export const Cart = ()=>{
         }
     },[formData])
 
-    const onInput=({ target }) => {
-        console.log(target)
+    /*    const onInput=({ target }) => {
         const nextFormData={ ...formData, [target.name]: target.value}
         setFormData(nextFormData)
+    } */
+
+    const onInput=(e) => {
+        //const nextFormData={ ...formData, [target.name]: target.value}
+        setFormData({ ...formData,[e.target.name]: e.target.value})
     }
 
     function onSubmit(event){

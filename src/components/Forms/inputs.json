@@ -2,21 +2,27 @@
     {
         "label":"Nombre",
         "name":"name",
-        "value":""
+        "value":" "
     },
     {
         "label":"Apellido",
         "name":"surname",
-        "value":""
+        "value":" "
     },
     {
         "label":"Teléfono",
         "name":"telephone",
-        "value":""
+        "value":" "
     },
     {
         "label":"Edad",
         "name":"age",
+        "value":" "
+    },
+    {
+        "label":"Mail",
+        "name":"mail",
         "value":""
     }
 ]
+
