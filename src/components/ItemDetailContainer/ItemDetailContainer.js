@@ -26,7 +26,7 @@ export const ItemDetailContainer = () =>{
         }).catch((error)=>{
             console.log('Error buscando items', error)
         }).finally(()=>{
-           // setLoading(false)
+        
         })
     }, [itemId]) 
     return (     

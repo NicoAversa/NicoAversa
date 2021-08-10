@@ -3,6 +3,8 @@ import {useParams} from 'react-router'
 import {ItemList} from '../ItemList/ItemList'
 import { database } from '../../firebase/firebase'
 import { Page } from '../page/page'
+import {Spinner} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 export const ItemListContainer = (props) =>{
 
     const {categoryId} = useParams()
@@ -10,7 +12,7 @@ export const ItemListContainer = (props) =>{
     const [itemsMostrar, setItemsMostrar] = useState([])
     
     useEffect(()=>{
-       // setLoading(true);
+        <Spinner color='success'/>
         const db = database;
         const itemCollection = db.collection("items");
         const categorias= itemCollection.where('category',"==",categoryId)
@@ -22,14 +24,14 @@ export const ItemListContainer = (props) =>{
     }).catch((error) => {
         console.log('Error buscando Items', error);
     }).finally(() => {
-        //setLoading(false);
+        
     })
 }, [categoryId]); 
 
     return (     
         
         <Page className='list'>
-            <h1>{categoryId}</h1>
+            <h2>{categoryId}</h2>
             <ItemList itemsMostrar={itemsMostrar}/>
             <br/>
             <br/>

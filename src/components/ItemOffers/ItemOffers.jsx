@@ -9,8 +9,8 @@ export const ItemOffers = ({item})=>{
     <div className='item-datas'>
     <div className='image'><img className='imgs' src={item.imgUrl} alt='Imágen de producto'/></div>
         <div className='product'>
-        <h3>{item.title}</h3>
-        <h2>$ {item.price}</h2>
+        <h5>{item.title}</h5>
+        <h4>$ {item.price}</h4>
         </div>
         <Link to={`/item/${item.id}`} className='btnDetalle'>Ver Detalles</Link>
     </div> 

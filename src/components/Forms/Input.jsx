@@ -1,8 +1,14 @@
 import React from 'react'
-import styles from './Forms.css'
+import './Forms.css'
 export const Inputs =({label, name, value, onInput})=>(
-    <label className={styles.input}>
-        {label}
-        <input name={name} type='text' onChange={onInput.bind(this)} value={value}/><br></br>
-    </label>
+    <>
+    <label htmlFor='name'>{label}</label>
+    <input
+    name={name}
+    type='text'
+    placeholder='Ingrese Nombre'
+    onChange={onInput}
+    >
+    </input>
+    </>
 )

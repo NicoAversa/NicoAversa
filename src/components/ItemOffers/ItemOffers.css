@@ -25,6 +25,9 @@ box-shadow: -1px -4px 17px 2px rgba(0,0,0,0.52);
 }
 .product{
     width: 80%;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .imgs{
@@ -52,9 +55,10 @@ box-shadow: -1px -4px 17px 2px rgba(0,0,0,0.52);
     border: 1px solid #099c95;
     width:auto;
     height:auto;
-    margin-top:5px;
+    margin-top:8px;
     padding: 5px;
     text-align:center;
+    align-items: center;
     border-radius: 5px 5px 5px 5px;
 -moz-border-radius: 5px 5px 5px 5px;
 -webkit-border-radius: 5px 5px 5px 5px;

@@ -3,6 +3,8 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import './ItemListOffers.css'
 import {ItemOffers} from '../ItemOffers/ItemOffers'
 import React from 'react'
+import {Spinner} from 'reactstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const ItemListOffers = ({itemsOffers})=>{
     const loader=<FontAwesomeIcon icon={faSpinner}/>
@@ -11,9 +13,11 @@ export const ItemListOffers = ({itemsOffers})=>{
     return (
     <div >
     {itemsJSX.length === 0 ? (
-        <div className='cont'>
-            <h3>NO HAY OFERTAS POR EL MOMENTO</h3>
-        <div className='loading'>{loader}</div>
+        <div className='row-12'>
+            <h4>CARGANDO OFERTAS</h4>
+            <div className='loading'>
+            <Spinner color="success"/>
+            </div>
         </div> 
         
     ) : itemsJSX }

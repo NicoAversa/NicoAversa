@@ -28,13 +28,13 @@ export const ItemDetail = ({item} )=>{
     <div className='item-data'>
     <div className='image'><img className='imgs' src={item.imgUrl} alt='Imágen de producto'/></div>
         <div className='product'>
-        <h3>{item.title}</h3>
+        <h4>{item.title}</h4>
         <label className="title">Código:</label>
         <p>{item.id}</p>
         <label>Descripción:</label>
         <p className="descr">{item.description}</p>
         <label className="title">Precio:</label>
-        <h2>{item.price}</h2>
+        <h3>{item.price}</h3>
         <div id='comprando'>
         <ItemCount className="count" stock={5} initial={1} onAdd={onAdd} />
         </div>
